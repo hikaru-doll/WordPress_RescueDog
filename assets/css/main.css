@@ -293,11 +293,16 @@ page.php
     border-bottom: 3px dashed var(--color-accent);
     margin-bottom: var(--space-xxs);
   }
+  .intro {
+    margin-bottom: var(--space-m);
+  }
   & p {
     margin-bottom: var(--space-xs);
   }
   .image {
-    margin-bottom: var(--space-s);
+    display: block;
+    justify-self: center;
+    margin-bottom: var(--space-m);
   }
   .warning-volunteer {
     padding: var(--space-xs);
@@ -332,7 +337,6 @@ page.php
   & img {
     width: 100%;
     height: 350px;
-    object-position: 50% 0;
   }
   .about_image3 {
     object-position: 50% 86%;

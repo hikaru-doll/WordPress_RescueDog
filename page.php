@@ -86,36 +86,44 @@ defined('ABSPATH') || exit;
               <h2 class="about-title"><?php the_field('about_title1'); ?></h2>
               <p><?php the_field('sentence1'); ?></p>
             </div>
-            <?php if (get_field('about_image1')): ?>
-              <img src="<?php the_field('about_image1'); ?>">
-            <?php endif; ?>
+            <div class="image">
+              <?php if (get_field('about_image1')): ?>
+                <img src="<?php the_field('about_image1'); ?>">
+              <?php endif; ?>
+            </div>
           </section>
           <section class="section revers">
             <div class="text">
               <h2 class="about-title"><?php the_field('about_title2'); ?></h2>
               <p><?php the_field('sentence2'); ?></p>
             </div>
-            <?php if (get_field('about_image2')): ?>
-              <img src="<?php the_field('about_image2'); ?>">
-            <?php endif; ?>
+            <div class="image">
+              <?php if (get_field('about_image2')): ?>
+                <img src="<?php the_field('about_image2'); ?>">
+              <?php endif; ?>
+            </div>
           </section>
           <section class="section">
             <div class="text">
               <h2 class="about-title"><?php the_field('about_title3'); ?></h2>
               <p><?php the_field('sentence3'); ?></p>
             </div>
-            <?php if (get_field('about_image3')): ?>
-              <img class="about_image3" src="<?php the_field('about_image3'); ?>">
-            <?php endif; ?>
+            <div class="image">
+              <?php if (get_field('about_image3')): ?>
+                <img class="about_image3" src="<?php the_field('about_image3'); ?>">
+              <?php endif; ?>
+            </div>
           </section>
           <section class="section revers">
             <div class="text">
               <h2 class="about-title"><?php the_field('about_title4'); ?></h2>
               <p><?php the_field('sentence4'); ?></p>
             </div>
-            <?php if (get_field('about_image4')): ?>
-              <img src="<?php the_field('about_image4'); ?>">
-            <?php endif; ?>
+            <div class="image">
+              <?php if (get_field('about_image4')): ?>
+                <img src="<?php the_field('about_image4'); ?>">
+              <?php endif; ?>
+            </div>
           </section>
         <?php endif; ?>
   </div>
