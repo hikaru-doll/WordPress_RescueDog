@@ -66,42 +66,42 @@ defined('ABSPATH') || exit;
   <section class="dogs bg">
     <h2 class="section-title">ワンちゃん紹介</h2>
     <ul class="lists grid">
-      <li class="item">
-        <a href="#">
-          <div class="image">
-            <img src="assets/img/volunteer.webp" alt="ワンコ" />
-          </div>
-          <h3 class="name">リリー</h3>
-          <ul class="attribute flex">
-            <li>推定５歳</li>
-            <li>女の子</li>
-          </ul>
-        </a>
-      </li>
-      <li class="item">
-        <a href="#">
-          <div class="image">
-            <img src="assets/img/volunteer.webp" alt="ワンコ" />
-          </div>
-          <h3 class="name">リリー</h3>
-          <ul class="attribute flex">
-            <li>推定５歳</li>
-            <li>女の子</li>
-          </ul>
-        </a>
-      </li>
-      <li class="item">
-        <a href="#">
-          <div class="image">
-            <img src="assets/img/volunteer.webp" alt="ワンコ" />
-          </div>
-          <h3 class="name">リリー</h3>
-          <ul class="attribute flex">
-            <li>推定５歳</li>
-            <li>女の子</li>
-          </ul>
-        </a>
-      </li>
+      <?php
+      $dogs_posts = new WP_Query(array(
+        'post_type'      => 'dogs', // ★デフォルト投稿
+        'posts_per_page' => 4,
+        'post_status'    => 'publish',
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+      ));
+
+      if ($dogs_posts->have_posts()) :
+        while ($dogs_posts->have_posts()) : $dogs_posts->the_post();
+      ?>
+
+
+
+          <li class="item">
+            <a href="<?php the_permalink(); ?>">
+              <div class="image">
+                <!-- <img src="assets/img/volunteer.webp" alt="ワンコ" /> -->
+                <?php the_post_thumbnail(); ?>
+              </div>
+              <h3 class="name"><?php the_title(); ?></h3>
+              <ul class="attribute flex">
+                <li>年齢：<?php the_field("age"); ?></li>
+                <li>性別：<?php the_field("sex"); ?></li>
+              </ul>
+            </a>
+          </li>
+
+        <?php
+        endwhile;
+        wp_reset_postdata(); // ← 必須！
+      else :
+        ?>
+        <p>投稿がありません。</p>
+      <?php endif; ?>
     </ul>
     <div class="button">
       <a href="#">ワンちゃんをもっと見る</a>
