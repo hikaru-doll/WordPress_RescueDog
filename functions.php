@@ -1,0 +1,146 @@
+<?php
+defined('ABSPATH') || exit;
+?>
+<?php
+// chatGPT--------------------------------------------------------------2026/2/19
+function my_enqueue_styles()
+{
+
+  $uri = get_theme_file_uri();
+
+
+  wp_enqueue_style(
+    'variable',
+    $uri . '/assets/css/variable.css',
+    array(),
+    filemtime(get_theme_file_path('/assets/css/variable.css'))
+  );
+
+  wp_enqueue_style(
+    'reset',
+    $uri . '/assets/css/reset.css',
+    array('variable'),
+    filemtime(get_theme_file_path('/assets/css/reset.css'))
+  );
+
+  wp_enqueue_style(
+    'style',
+    $uri . '/style.css',
+    array('reset'),
+    filemtime(get_theme_file_path('/style.css'))
+  );
+
+  wp_enqueue_style(
+    'main',
+    $uri . '/assets/css/main.css',
+    array('style'),
+    filemtime(get_theme_file_path('/assets/css/main.css'))
+  );
+
+  wp_enqueue_style(
+    'responsive',
+    $uri . '/responsive.css',
+    array('main'),
+    filemtime(get_theme_file_path('/responsive.css'))
+  );
+  wp_enqueue_script(
+    'my-script',
+    get_theme_file_uri('/java.js'),
+    array(),
+    filemtime(get_theme_file_path('/java.js')),
+    true
+  );
+}
+add_action('wp_enqueue_scripts', 'my_enqueue_styles');
+
+
+
+//セットアップ----------------------------------------------------
+function my_setup()
+{
+  add_theme_support('post-thumbnails'); // アイキャッチ画像を有効化
+  add_theme_support('title-tag'); // titleタグ自動生成
+  add_theme_support('html5', array( // HTML5による出力
+    'search-form',
+    'comment-form',
+    'comment-list',
+    'gallery',
+    'caption',
+  ));
+}
+add_action('after_setup_theme', 'my_setup');
+
+// デフォルト投稿のトップページの件数制御---------
+add_action(
+  'pre_get_posts',
+  function ($query) {
+    if ($query->is_front_page() && $query->is_main_query()) {
+      $query->set('posts_per_page', 3);
+    }
+  }
+);
+// デフォルト投稿の管理画面メニューのラベル変更---------
+add_action(
+  'admin_menu',
+  function () {
+    global $menu;
+    $menu[5][0] = 'お知らせ♬';
+  }
+);
+
+// カスタム投稿タイプの使用----------------------
+function create_my_post_type()
+{
+  register_post_type(
+    'dogs', //このクエリの識別子（スラッグ）
+    array(
+      'label' => 'ワンちゃん紹介', //管理画面のサイドメニューに表示されるラベル
+      'public' => true,
+      'hierarchical' => false, //ヒエラルキー（階層）を持つかどうか
+      // trueにすると、固定ページになる（？）
+      'has_archive' => true, //trueなら設定からpermalinkを更新する
+      'show_in_rest' => true,
+      'menu_position' => 4, //デフォルトポストの下
+      'menu_icon' => 'dashicons-pets',
+      'taxonomies' => array(
+        'category'
+      ),
+      'supports' => array(
+        'title',
+        'editor',
+        'thumbnail',
+        'custom-fields'
+      ),
+    ),
+  );
+  register_post_type(
+    'reports',
+    array(
+      'label' => '収支報告一覧',
+      'public' => true,
+      'hierarchical' => false,
+      'has_archive' => true,
+      'show_in_rest' => true,
+      'menu_position' => 4,
+      'menu_icon' => 'dashicons-money-alt',
+      'taxonomies' => array(
+        'category'
+      ),
+      'supports' => array(
+        'title',
+        'editor',
+        'thumbnail',
+        'custom-fields'
+      ),
+    ),
+  );
+}
+add_action('init', 'create_my_post_type');
+
+
+// WordPress標準機能のメニューを登録する------------------------------------------------------------------------------------------------
+register_nav_menus([
+  'global_nav' => 'グローバルナビ',
+  'hamburger_nav' => 'ハンバーガーナビ',
+  'footer_nav' => 'フッターナビ',
+]);
