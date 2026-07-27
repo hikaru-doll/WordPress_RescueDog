@@ -17,21 +17,16 @@ defined('ABSPATH') || exit;
         <dd>午前9時～午後6時</dd>
       </dl>
     </div>
-    <nav id="footer-nav" class="footer-nav">
-      <ul>
-        <li><a href="#">トップページ</a></li>
-        <li><a href="#">ワンちゃん紹介</a></li>
-        <li><a href="#">譲渡の条件</a></li>
-        <li><a href="#">譲渡の流れ</a></li>
-        <li><a href="#">お知らせ一覧ページ</a></li>
-        <li><a href="#">私たちについて</a></li>
-        <li><a href="#">ご支援について</a></li>
-        <li><a href="#">ボランティアさん募集</a></li>
-        <li><a href="#">お問い合わせ</a></li>
-        <li><a href="#">収支報告一覧ページ</a></li>
-        <li><a href="#">プライバシーポリシー</a></li>
-      </ul>
-    </nav>
+    <!-- WP標準機能のメニューマネージャー使用 -->
+    <?php wp_nav_menu(
+      array(
+        'theme_location' => 'footer_nav',
+        'container' => 'nav',
+        'container_class' => 'footer-nav',
+        'menu_class' => 'nav-menu',
+      )
+    ); ?>
+  </div>
   </div>
   <p class="copyright">&copy;<span id="year"></span> RESCUE DOG</p>
 </footer>

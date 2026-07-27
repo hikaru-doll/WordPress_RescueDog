@@ -28,22 +28,7 @@ defined('ABSPATH') || exit;
         <li>受付時間:午前9時～午後6時</li>
       </ul>
     </div>
-    <!-- <nav id="header-nav" class="header-nav">
-      <ul class="nav-menu flex">
-        <li><a href="#">トップ</a></li>
-        <li><a href="#"> ワンちゃん紹介 </a></li>
-        <li>
-          <a href="">譲渡について</a>
-          <ul class="sub-menu">
-            <li><a href="#b">譲渡の流れ</a></li>
-            <li><a href="#c   ">譲渡の条件</a></li>
-          </ul>
-        </li>
-        <li><a href="#">ご支援について</a></li>
-        <li><a href="#">私たちについて</a></li>
-        <li><a href="#">お問い合わせ</a></li>
-      </ul>
-    </nav> -->
+    <!-- WP標準機能のメニューマネージャー使用 -->
 
     <!-- PC用のヘッダーのナビゲーション -->
     <?php wp_nav_menu(
@@ -54,24 +39,6 @@ defined('ABSPATH') || exit;
         'menu_class' => 'nav-menu',
       )
     ); ?>
-
-
-    <!-- <nav id="open-nav" class="open-nav">
-      <ul class="nav-menu flex">
-        <li><a href="#">トップぺージ</a></li>
-        <li><a href="#">ワンちゃん紹介</a></li>
-        <li>
-          譲渡について
-          <ul class="sub-menu">
-            <li><a href="#">譲渡の流れ</a></li>
-            <li><a href="#">譲渡の条件</a></li>
-          </ul>
-        </li>
-        <li><a href="#">ご支援について</a></li>
-        <li><a href="#">私たちについて</a></li>
-        <li><a href="#">お問い合わせ</a></li>
-      </ul>
-    </nav> -->
 
     <!-- SP用のハンバーガーメニューのナビゲーション -->
     <?php wp_nav_menu(
@@ -92,5 +59,4 @@ defined('ABSPATH') || exit;
       <span class="ham2"></span>
       <span class="ham3"></span>
     </button>
-    <!-- </div> -->
   </header>
