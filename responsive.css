@@ -1,0 +1,134 @@
+@charset "utf-8";
+
+/* -------------------------
+タブレット用
+------------------------- */
+@media screen and (min-width: 767px) {
+  /* front-page.php ----- */
+  .front-page {
+    padding-top: 0;
+  }
+  .mainvisual {
+    .blank {
+      display: none;
+    }
+    & img {
+      padding-top: 60px;
+      max-height: 100vh;
+      object-position: 50% 0;
+    }
+  }
+  .hero-buttons {
+    justify-content: left;
+  }
+  .catchphrase {
+    text-align: left;
+    padding: var(--space-m);
+  }
+  .dogs .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .support .blank {
+    display: none;
+  }
+
+  /* archive-dogs.php------ */
+  .archive-dogs .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xxs);
+  }
+  /* home.php-------------- */
+  .home-php {
+    .grid {
+      grid-template-columns: 1fr 2fr;
+      align-items: center;
+      gap: var(--space-m);
+    }
+    .image {
+      height: 230px;
+    }
+  }
+  /* single-dogs.php-------- */
+  .single-dogs {
+    .content.grid {
+      grid-template-columns: 1fr 1.5fr;
+      align-items: center;
+      gap: var(--space-m);
+    }
+    .text.grid {
+      margin-bottom: 0;
+    }
+  }
+  /* single-php-------- */
+  .single-php .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* -------------------------
+PC用
+------------------------- */
+@media screen and (min-width: 1025px) {
+  /* header---------- */
+  .ham {
+    display: none;
+  }
+
+  .header-nav {
+    display: block;
+  }
+  .header-nav .flex {
+    gap: 1rem;
+  }
+  .header-nav .sub-menu {
+    display: none;
+    background-color: var(--color-main);
+    padding: var(--space-xxs) 0;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+  }
+  .nav-menu li {
+    position: relative;
+  }
+  .nav-menu li:has(.sub-menu):hover .sub-menu,
+  .nav-menu li:has(.sub-menu):focus-within .sub-menu {
+    display: block;
+  }
+  .bg {
+    padding: var(--space-s) calc((100vw - 1100px) / 2);
+  }
+  /* front-page.php ----- */
+  .dogs .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .support .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .about {
+    height: 700px;
+  }
+  .about .inner {
+    width: 500px;
+  }
+  /* archive.php---------- */
+  .archive-page .wrapper {
+    max-width: 500px;
+  }
+  /* archive-dogs.php------ */
+  .archive-dogs .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xxs);
+  }
+  /* single-php-------- */
+  .single-php .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* ------------------------
+大き目ディスプレイ
+--------------------------*/
+@media screen and (min-width: 1200px) {
+  .header-nav .flex {
+    gap: var(--space-m);
+  }
+}
