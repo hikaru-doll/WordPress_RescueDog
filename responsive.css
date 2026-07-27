@@ -59,7 +59,11 @@
       margin-bottom: 0;
     }
   }
-  /* single-php-------- */
+  /* single-reports.php----- */
+  .single-reports .wrapper {
+    max-width: 700px;
+  }
+  /* single-php------------- */
   .single-php .grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -85,7 +89,6 @@
 /* -------------------------
 PC用
 ------------------------- */
-/* @media screen and (min-width: 1025px) { */
 @media screen and (min-width: 1200px) {
   /* header---------- */
   .ham {
@@ -147,16 +150,3 @@ PC用
     grid-template-columns: repeat(3, 1fr);
   }
 }
-/* ------------------------
-大き目ディスプレイ
---------------------------*/
-/* @media screen and (min-width: 1100px) {
-  .nav-menu {
-    gap: var(--space-xs);
-  }
-}
-@media screen and (min-width: 1200px) {
-  .nav-menu {
-    gap: var(--space-s);
-  }
-} */
