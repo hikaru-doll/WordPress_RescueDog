@@ -1,118 +1,141 @@
-<!doctype html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rescue Dog</title>
-    <link rel="stylesheet" href="assets/css/variable.css" />
-    <link rel="stylesheet" href="assets/css/reset.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="responsive.css" />
-  </head>
-  <body>
-    <!-- header ----------------------->
-    <header class="header flex">
-      <!-- <div class="flex"> -->
-      <div class="flex">
-        <h1 class="logo">
-          <a href="#">
-            <img src="assets/img/RescueDog.png" alt="レスキュードッグのロゴ" />
-          </a>
-        </h1>
-        <ul class="reception">
-          <li>電話番号:<a href="tel:0000-00-0000">0000-00-0000</a></li>
-          <li>受付時間:午前9時～午後6時</li>
-        </ul>
-      </div>
-      <nav id="header-nav" class="header-nav">
-        <ul class="nav-menu flex">
-          <li><a href="#">トップ</a></li>
-          <li><a href="#"> ワンちゃん紹介 </a></li>
-          <li>
-            <a href="">譲渡について</a>
-            <ul class="sub-menu">
-              <li><a href="#b">譲渡の流れ</a></li>
-              <li><a href="#c   ">譲渡の条件</a></li>
+<?php
+defined('ABSPATH') || exit;
+?>
+<?php get_header(); ?>
+<!-- main ------------------------->
+<main class="page-php main">
+
+  <div class="wrapper">
+    <?php if (have_posts()): while (have_posts()): the_post(); ?>
+        <h1 class="title"><?php the_title(); ?></h1>
+
+        <!-- ACFカスタムフィールド -------------------------------->
+        <?php if (get_field('page_image')): ?>
+          <img class="image" src="<?php the_field('page_image'); ?>">
+        <?php endif; ?>
+
+        <?php if (get_field('page_intro')): ?>
+          <p class="intro"><?php the_field('page_intro'); ?></p>
+        <?php endif; ?>
+        <!-- ご支援について-専用フィールド -->
+        <?php if (get_field('section_title1')): ?>
+          <h2> <?php the_field('section_title1'); ?></h2>
+        <?php endif; ?>
+
+        <?php if (get_field('request1')): ?>
+          <p class="request"><?php the_field('request1'); ?></p>
+        <?php endif; ?>
+
+        <?php if (get_field('necessary')): ?>
+          <div class="necessary">
+            <ul>
+              <li>
+                <h3>特に必要なもの</h3>
+                <p><?php the_field('necessary'); ?></p>
+              </li>
+              <li>
+                <h3>嬉しいもの</h3>
+                <p><?php the_field('happy'); ?></p>
+              </li>
             </ul>
-          </li>
-          <li><a href="#">ご支援について</a></li>
-          <li><a href="#">私たちについて</a></li>
-          <li><a href="#">お問い合わせ</a></li>
-        </ul>
-      </nav>
-      <nav id="open-nav" class="open-nav">
-        <ul class="nav-menu flex">
-          <li><a href="#">トップぺージ</a></li>
-          <li><a href="#">ワンちゃん紹介</a></li>
-          <li>
-            譲渡について
-            <ul class="sub-menu">
-              <li><a href="#">譲渡の流れ</a></li>
-              <li><a href="#">譲渡の条件</a></li>
-            </ul>
-          </li>
-          <li><a href="#">ご支援について</a></li>
-          <li><a href="#">私たちについて</a></li>
-          <li><a href="#">お問い合わせ</a></li>
-        </ul>
-      </nav>
-      <button
-        class="ham"
-        aria-controls="open-nav"
-        aria-expanded="false"
-        aria-label="メニューを開く"
-      >
-        <span class="ham1"></span>
-        <span class="ham2"></span>
-        <span class="ham3"></span>
-      </button>
-      <!-- </div> -->
-    </header>
-    <!-- main ------------------------->
-    <main class="page-php main">
-      <div class="wrapper">
-        <h1 class="title">固定ページタイトル</h1>
-        <div class="image">
-          <img src="assets/img/dog-food.webp" alt="" />
-        </div>
-        <div class="content"></div>
-      </div>
-    </main>
-    <!-- footer ----------------------->
-    <footer class="footer">
-      <div class="flex wrapper">
-        <div class="item">
-          <img
-            class="logo"
-            src="assets/img/RescueDog.png"
-            alt="レスキュードッグのロゴ"
-          />
-          <dl class="reception grid">
-            <dt>電話番号：</dt>
-            <dd><a href="tel:09000000000">090-0000-0000</a></dd>
-            <dt>受付時間：</dt>
-            <dd>午前9時～午後6時</dd>
+          </div>
+        <?php endif; ?>
+
+        <?php if (get_field('table_address')): ?>
+          <p>物資の援助にご協力いただける方は、下記住所まで直接ご送付くださいますと本当に助かります。</p>
+          <dl class="grid">
+            <dt>住所</dt>
+            <dd><?php the_field('table_address'); ?></dd>
+            <dt>宛先</dt>
+            <dd><?php the_field('table_name'); ?></dd>
+            <dt>電話番号</dt>
+            <dd><?php the_field('table_tel'); ?></dd>
           </dl>
-        </div>
-        <nav id="footer-nav" class="footer-nav">
-          <ul>
-            <li><a href="#">トップページ</a></li>
-            <li><a href="#">ワンちゃん紹介</a></li>
-            <li><a href="#">譲渡の条件</a></li>
-            <li><a href="#">譲渡の流れ</a></li>
-            <li><a href="#">お知らせ一覧ページ</a></li>
-            <li><a href="#">私たちについて</a></li>
-            <li><a href="#">ご支援について</a></li>
-            <li><a href="#">ボランティアさん募集</a></li>
-            <li><a href="#">お問い合わせ</a></li>
-            <li><a href="#">収支報告一覧ページ</a></li>
-            <li><a href="#">プライバシーポリシー</a></li>
-          </ul>
-        </nav>
-      </div>
-      <p class="copyright">&copy;<span id="year"></span> RESCUE DOG</p>
-    </footer>
-    <script src="main.js"></script>
-  </body>
-</html>
+        <?php endif; ?>
+
+        <?php if (get_field('section_title2')): ?>
+          <h2><?php the_field('section_title2'); ?></h2>
+
+        <?php endif; ?>
+
+        <?php if (get_field('request2')): ?>
+          <p class="request"><?php the_field('request2'); ?></p>
+        <?php endif; ?>
+
+        <?php if (get_field('table_bank')): ?>
+          <dl class="grid">
+            <dt>銀行名</dt>
+            <dd><?php the_field('table_bank'); ?></dd>
+            <dt>支店名</dt>
+            <dd><?php the_field('table_bank_branch'); ?></dd>
+            <dt>口座番号</dt>
+            <dd><?php the_field('table_bank_number'); ?></dd>
+            <dt>振込先口座名義</dt>
+            <dd><?php the_field('table_account'); ?></dd>
+          </dl>
+        <?php endif; ?>
+        <!-- 譲渡の条件/流れ―専用フィールド -->
+        <?php if (get_field('page_lists')): ?>
+          <div class="lists"><?php the_field('page_lists'); ?></div>
+        <?php endif; ?>
+        <!-- ボランティア募集-専用フィールド -->
+        <?php if (get_field('recruitment')): ?>
+          <?php the_field('recruitment'); ?>
+        <?php endif; ?>
+
+        <?php if (get_field('warning')): ?>
+          <p class="warning-volunteer"><?php the_field('warning'); ?></p>
+        <?php endif; ?>
+        <!-- 私たちについて-専用のフィールド start-->
+        <?php if (get_field('about_title1')): ?>
+          <section class="section">
+            <div class="text">
+              <h2 class="about-title"><?php the_field('about_title1'); ?></h2>
+              <p><?php the_field('sentence1'); ?></p>
+            </div>
+            <?php if (get_field('about_image1')): ?>
+              <img src="<?php the_field('about_image1'); ?>">
+            <?php endif; ?>
+          </section>
+
+          <section class="section revers">
+            <div class="text">
+              <h2 class="about-title"><?php the_field('about_title2'); ?></h2>
+              <p><?php the_field('sentence2'); ?></p>
+            </div>
+            <?php if (get_field('about_image2')): ?>
+              <img src="<?php the_field('about_image2'); ?>">
+            <?php endif; ?>
+          </section>
+          <section class="section">
+            <div class="text">
+              <h2 class="about-title"><?php the_field('about_title3'); ?></h2>
+              <p><?php the_field('sentence3'); ?></p>
+            </div>
+            <?php if (get_field('about_image3')): ?>
+              <img class="about_image3" src="<?php the_field('about_image3'); ?>">
+            <?php endif; ?>
+          </section>
+          <section class="section revers">
+            <div class="text">
+              <h2 class="about-title"><?php the_field('about_title4'); ?></h2>
+              <p><?php the_field('sentence4'); ?></p>
+            </div>
+            <?php if (get_field('about_image4')): ?>
+              <img src="<?php the_field('about_image4'); ?>">
+            <?php endif; ?>
+          </section>
+        <?php endif; ?>
+        <!--収支報告書　専用のフィールド start----->
+
+        <!--/収支報告書　専用のフィールド end ----->
+  </div>
+
+
+<?php endwhile; ?>
+<?php else: ?>
+<?php endif; ?>
+
+
+</main>
+<?php get_footer(); ?>
