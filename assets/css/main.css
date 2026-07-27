@@ -100,7 +100,7 @@ front-page.php
     height: 10rem;
     border-radius: 50%;
     transition: 0.4s;
-    margin-bottom: var(--space-xxs);
+    margin: 0 auto var(--space-xxs) auto;
   }
   .name {
     font-weight: bold;
