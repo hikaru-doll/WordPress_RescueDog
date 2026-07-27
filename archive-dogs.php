@@ -5,7 +5,8 @@ defined('ABSPATH') || exit;
 <!-- main ------------------------->
 <main class="archive-dogs main">
   <div class="wrapper">
-    <h1 class="title">ワンちゃん紹介</h1>
+    <h1 class="title"><?php echo post_type_archive_title(); ?></h1>
+
     <ul class="grid lists">
 
       <?php
