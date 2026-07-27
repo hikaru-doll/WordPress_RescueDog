@@ -1,3 +1,7 @@
+<?php
+defined('ABSPATH') || exit;
+?>
+<?php get_header(); ?>
 <!-- main ------------------------->
 <main class="front-page main">
   <!-- mainvisual --------->
@@ -161,3 +165,4 @@
     </div>
   </section>
 </main>
+<?php get_footer(); ?>

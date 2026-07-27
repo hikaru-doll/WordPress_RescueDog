@@ -35,7 +35,7 @@ defined('ABSPATH') || exit;
   </div>
   <p class="copyright">&copy;<span id="year"></span> RESCUE DOG</p>
 </footer>
-<!-- <script src="main.js"></script> -->
+<?php wp_footer(); ?>
 </body>
 
 </html>
