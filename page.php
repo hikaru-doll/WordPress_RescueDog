@@ -8,6 +8,7 @@ defined('ABSPATH') || exit;
   <div class="wrapper">
     <?php if (have_posts()): while (have_posts()): the_post(); ?>
         <h1 class="title"><?php the_title(); ?></h1>
+        <?php the_content(); ?>
 
         <!-- ACFカスタムフィールド -------------------------------->
         <?php if (get_field('page_image')): ?>
@@ -21,11 +22,9 @@ defined('ABSPATH') || exit;
         <?php if (get_field('section_title1')): ?>
           <h2> <?php the_field('section_title1'); ?></h2>
         <?php endif; ?>
-
         <?php if (get_field('request1')): ?>
           <p class="request"><?php the_field('request1'); ?></p>
         <?php endif; ?>
-
         <?php if (get_field('necessary')): ?>
           <div class="necessary">
             <ul>
@@ -40,7 +39,6 @@ defined('ABSPATH') || exit;
             </ul>
           </div>
         <?php endif; ?>
-
         <?php if (get_field('table_address')): ?>
           <p>物資の援助にご協力いただける方は、下記住所まで直接ご送付くださいますと本当に助かります。</p>
           <dl class="grid">
@@ -52,16 +50,12 @@ defined('ABSPATH') || exit;
             <dd><?php the_field('table_tel'); ?></dd>
           </dl>
         <?php endif; ?>
-
         <?php if (get_field('section_title2')): ?>
           <h2><?php the_field('section_title2'); ?></h2>
-
         <?php endif; ?>
-
         <?php if (get_field('request2')): ?>
           <p class="request"><?php the_field('request2'); ?></p>
         <?php endif; ?>
-
         <?php if (get_field('table_bank')): ?>
           <dl class="grid">
             <dt>銀行名</dt>
@@ -82,7 +76,6 @@ defined('ABSPATH') || exit;
         <?php if (get_field('recruitment')): ?>
           <?php the_field('recruitment'); ?>
         <?php endif; ?>
-
         <?php if (get_field('warning')): ?>
           <p class="warning-volunteer"><?php the_field('warning'); ?></p>
         <?php endif; ?>
@@ -97,7 +90,6 @@ defined('ABSPATH') || exit;
               <img src="<?php the_field('about_image1'); ?>">
             <?php endif; ?>
           </section>
-
           <section class="section revers">
             <div class="text">
               <h2 class="about-title"><?php the_field('about_title2'); ?></h2>
@@ -126,16 +118,8 @@ defined('ABSPATH') || exit;
             <?php endif; ?>
           </section>
         <?php endif; ?>
-        <!--収支報告書　専用のフィールド start----->
-
-        <!--/収支報告書　専用のフィールド end ----->
   </div>
-
-
 <?php endwhile; ?>
-<?php else: ?>
 <?php endif; ?>
-
-
 </main>
 <?php get_footer(); ?>
