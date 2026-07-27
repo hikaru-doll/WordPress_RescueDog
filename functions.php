@@ -2,8 +2,7 @@
 defined('ABSPATH') || exit;
 ?>
 <?php
-// chatGPT--------------------------------------------------------------2026/2/19
-function my_enqueue_styles()
+function rescueDog_enqueue_styles()
 {
 
   $uri = get_theme_file_uri();
@@ -45,13 +44,13 @@ function my_enqueue_styles()
   );
   wp_enqueue_script(
     'my-script',
-    get_theme_file_uri('/java.js'),
+    get_theme_file_uri('/main.js'),
     array(),
-    filemtime(get_theme_file_path('/java.js')),
+    filemtime(get_theme_file_path('/main.js')),
     true
   );
 }
-add_action('wp_enqueue_scripts', 'my_enqueue_styles');
+add_action('wp_enqueue_scripts', 'rescueDog_enqueue_styles');
 
 
 
