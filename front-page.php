@@ -7,10 +7,11 @@ defined('ABSPATH') || exit;
   <!-- mainvisual --------->
   <section class="mainvisual">
     <picture class="hero-image">
+      <?php $theme_uri = esc_url(get_theme_file_uri()); ?>
       <source
         media="(min-width: 767px)"
-        srcset="assets/img/mainvisual-pc.webp" />
-      <img src="assets/img/mainvisual-sp.webp" alt="ボーダーコリー" />
+        srcset="<?php echo $theme_uri; ?>/assets/img/mainvisual-pc.webp" />
+      <img src="<?php echo $theme_uri; ?>/assets/img/mainvisual-sp.webp" alt="犬と人" />
     </picture>
     <div class="catchphrase">
       <h2>小さな命を、大切な家族へ。</h2>
