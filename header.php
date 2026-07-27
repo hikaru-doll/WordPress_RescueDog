@@ -28,7 +28,7 @@ defined('ABSPATH') || exit;
         <li>受付時間:午前9時～午後6時</li>
       </ul>
     </div>
-    <nav id="header-nav" class="header-nav">
+    <!-- <nav id="header-nav" class="header-nav">
       <ul class="nav-menu flex">
         <li><a href="#">トップ</a></li>
         <li><a href="#"> ワンちゃん紹介 </a></li>
@@ -43,8 +43,20 @@ defined('ABSPATH') || exit;
         <li><a href="#">私たちについて</a></li>
         <li><a href="#">お問い合わせ</a></li>
       </ul>
-    </nav>
-    <nav id="open-nav" class="open-nav">
+    </nav> -->
+
+    <!-- PC用のヘッダーのナビゲーション -->
+    <?php wp_nav_menu(
+      array(
+        'theme_location' => 'global_nav',
+        'container' => 'nav',
+        'container_class' => 'header-nav',
+        'menu_class' => 'nav-menu',
+      )
+    ); ?>
+
+
+    <!-- <nav id="open-nav" class="open-nav">
       <ul class="nav-menu flex">
         <li><a href="#">トップぺージ</a></li>
         <li><a href="#">ワンちゃん紹介</a></li>
@@ -59,7 +71,18 @@ defined('ABSPATH') || exit;
         <li><a href="#">私たちについて</a></li>
         <li><a href="#">お問い合わせ</a></li>
       </ul>
-    </nav>
+    </nav> -->
+
+    <!-- SP用のハンバーガーメニューのナビゲーション -->
+    <?php wp_nav_menu(
+      array(
+        'theme_location' => 'hamburger_nav',
+        'container' => 'nav',
+        'container_class' => 'open-nav',
+        'menu_class' => 'nav-menu',
+      )
+    ); ?>
+
     <button
       class="ham"
       aria-controls="open-nav"

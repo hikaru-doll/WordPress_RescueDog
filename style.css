@@ -149,9 +149,9 @@ header.php
   & a {
     transition: 0.3s ease;
   }
-  .sub-menu a::before {
+  /* .sub-menu a::before {
     content: "　--- ";
-  }
+  } */
 }
 .open-nav a:hover {
   margin-left: 10px;
