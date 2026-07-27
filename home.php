@@ -18,7 +18,7 @@ defined('ABSPATH') || exit;
                   <h2 class="item-title"><?php the_title(); ?></h2>
                   <time class="date"><?php the_date("Y. m. d"); ?></p>
                     <p class="content">
-                      <?php echo esc_html(wp_trim_words(get_field('profile'), 40, '…')); ?>
+                      <?php echo esc_html(wp_trim_words(get_the_content(), 40, '…')); ?>
                     </p>
                     <p class="link">続きを読む</p>
                 </div>
