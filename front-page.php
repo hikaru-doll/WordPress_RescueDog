@@ -67,7 +67,7 @@ defined('ABSPATH') || exit;
     <h2 class="section-title">ワンちゃん紹介</h2>
     <ul class="lists grid">
       <?php
-      $dogs_posts = new WP_Query(array(
+      $dogs_posts_latest = new WP_Query(array(
         'post_type'      => 'dogs', // ★デフォルト投稿
         'posts_per_page' => 4,
         'post_status'    => 'publish',
@@ -75,8 +75,8 @@ defined('ABSPATH') || exit;
         'order'          => 'DESC',
       ));
 
-      if ($dogs_posts->have_posts()) :
-        while ($dogs_posts->have_posts()) : $dogs_posts->the_post();
+      if ($dogs_posts_latest->have_posts()) :
+        while ($dogs_posts_latest->have_posts()) : $dogs_posts_latest->the_post();
       ?>
 
 
