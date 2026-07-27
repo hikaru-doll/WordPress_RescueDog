@@ -8,7 +8,7 @@ defined('ABSPATH') || exit;
     <div class="item">
       <img
         class="logo"
-        src="assets/img/RescueDog.png"
+        src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/img/RescueDog.png"
         alt="レスキュードッグのロゴ" />
       <dl class="reception grid">
         <dt>電話番号：</dt>

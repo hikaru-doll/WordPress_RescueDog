@@ -84,7 +84,6 @@ defined('ABSPATH') || exit;
           <li class="item">
             <a href="<?php the_permalink(); ?>">
               <div class="image">
-                <!-- <img src="assets/img/volunteer.webp" alt="ワンコ" /> -->
                 <?php the_post_thumbnail(); ?>
               </div>
               <h3 class="name"><?php the_title(); ?></h3>

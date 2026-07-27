@@ -20,7 +20,7 @@ defined('ABSPATH') || exit;
     <div class="flex">
       <h1 class="logo">
         <a href="#">
-          <img src="assets/img/RescueDog.png" alt="レスキュードッグのロゴ" />
+          <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/img/RescueDog.png" alt="レスキュードッグのロゴ" />
         </a>
       </h1>
       <ul class="reception">
