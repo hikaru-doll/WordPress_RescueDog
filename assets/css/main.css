@@ -393,6 +393,9 @@ single-reports.php
   .lead {
     margin-bottom: var(--space-s);
   }
+  .wrapper > table:last-of-type {
+    margin-bottom: var(--space-l);
+  }
 }
 /* -------------------------
 single.php
