@@ -242,6 +242,7 @@ home.php
   & img {
     transition: 0.3s;
     border-radius: 10px;
+    height: inherit;
   }
   .grid {
     gap: var(--space-xs);
