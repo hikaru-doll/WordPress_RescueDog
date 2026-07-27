@@ -33,36 +33,30 @@ defined('ABSPATH') || exit;
   <section class="news wrapper">
     <h2 class="section-title">お知らせ</h2>
     <ul class="lists">
-      <li class="item">
-        <a href="#">
-          <p class="date">2026年5月24日</p>
-          <h3 class="item-title">ボランティアさんと散歩へ</h3>
-          <p class="text">
-            今日は、大学生のボランティアさんがたくさん遊んでくれました！
-          </p>
-          <p class="link">もっと読む</p>
-        </a>
-      </li>
-      <li class="item">
-        <a href="#">
-          <p class="date">2026年5月24日</p>
-          <h3 class="item-title">ボランティアさんと散歩へ</h3>
-          <p class="text">
-            今日は、大学生のボランティアさんがたくさん遊んでくれました！
-          </p>
-          <p class="link">もっと読む</p>
-        </a>
-      </li>
-      <li class="item">
-        <a href="#">
-          <p class="date">2026年5月24日</p>
-          <h3 class="item-title">ボランティアさんと散歩へ</h3>
-          <p class="text">
-            今日は、大学生のボランティアさんがたくさん遊んでくれました！
-          </p>
-          <p class="link">もっと読む</p>
-        </a>
-      </li>
+      <?php
+      $recent_posts = new WP_Query(array(
+        'post_type'      => 'post', // ★デフォルト投稿
+        'posts_per_page' => 3,
+        'post_status'    => 'publish',
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+      ));
+      if ($recent_posts->have_posts()) :
+        while ($recent_posts->have_posts()) : $recent_posts->the_post(); ?>
+          <li class="item">
+            <a href="<?php the_permalink(); ?>">
+              <time class="date"><?php the_date(); ?></time>
+              <h3 class="item-title"><?php the_title(); ?></h3>
+              <p class="text">
+                <?php echo esc_html(wp_trim_words(get_the_content(), 40, '…')); ?>
+              </p>
+              <p class="link">もっと読む</p>
+            </a>
+          </li>
+
+      <?php endwhile;
+        wp_reset_postdata();
+      endif; ?>
     </ul>
     <div class="button">
       <a href="#">お知らせの一覧を見る</a>
