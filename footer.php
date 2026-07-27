@@ -23,7 +23,7 @@ defined('ABSPATH') || exit;
         'theme_location' => 'footer_nav',
         'container' => 'nav',
         'container_class' => 'footer-nav',
-        'menu_class' => 'nav-menu',
+        'menu_class' => 'footer-nav-menu',
       )
     ); ?>
   </div>
