@@ -4,38 +4,32 @@ defined('ABSPATH') || exit;
 <?php
 function rescueDog_enqueue_styles()
 {
-
+  // CSS・JSファイル読み込み----------
   $uri = get_theme_file_uri();
-
-
   wp_enqueue_style(
     'variable',
     $uri . '/assets/css/variable.css',
     array(),
     filemtime(get_theme_file_path('/assets/css/variable.css'))
   );
-
   wp_enqueue_style(
     'reset',
     $uri . '/assets/css/reset.css',
     array('variable'),
     filemtime(get_theme_file_path('/assets/css/reset.css'))
   );
-
   wp_enqueue_style(
     'style',
     $uri . '/style.css',
     array('reset'),
     filemtime(get_theme_file_path('/style.css'))
   );
-
   wp_enqueue_style(
     'main',
     $uri . '/assets/css/main.css',
     array('style'),
     filemtime(get_theme_file_path('/assets/css/main.css'))
   );
-
   wp_enqueue_style(
     'responsive',
     $uri . '/responsive.css',
@@ -52,9 +46,7 @@ function rescueDog_enqueue_styles()
 }
 add_action('wp_enqueue_scripts', 'rescueDog_enqueue_styles');
 
-
-
-//セットアップ----------------------------------------------------
+//セットアップ------------------------
 function my_setup()
 {
   add_theme_support('post-thumbnails'); // アイキャッチ画像を有効化
@@ -68,16 +60,19 @@ function my_setup()
   ));
 }
 add_action('after_setup_theme', 'my_setup');
-
 // デフォルト投稿のトップページの件数制御---------
-add_action(
-  'pre_get_posts',
-  function ($query) {
-    if ($query->is_front_page() && $query->is_main_query()) {
-      $query->set('posts_per_page', 3);
+function my_custom_posts_per_page($query)
+{
+  // 管理画面には影響を与えない
+  if (! is_admin() && $query->is_main_query()) {
+
+    // 特定の投稿タイプアーカイブだけに適用する例
+    if (is_post_type_archive('dogs')) {
+      $query->set('posts_per_page', 4);
     }
   }
-);
+}
+add_action('pre_get_posts', 'my_custom_posts_per_page');
 // デフォルト投稿の管理画面メニューのラベル変更---------
 add_action(
   'admin_menu',
@@ -86,7 +81,6 @@ add_action(
     $menu[5][0] = 'お知らせ♬';
   }
 );
-
 // カスタム投稿タイプの使用----------------------
 function create_my_post_type()
 {
@@ -135,9 +129,7 @@ function create_my_post_type()
   );
 }
 add_action('init', 'create_my_post_type');
-
-
-// WordPress標準機能のメニューを登録する------------------------------------------------------------------------------------------------
+// WordPress標準機能のメニューを登録する-----------
 register_nav_menus([
   'global_nav' => 'グローバルナビ',
   'hamburger_nav' => 'ハンバーガーナビ',
