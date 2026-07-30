@@ -131,7 +131,8 @@ PC用
     grid-template-columns: 1fr 1fr;
   }
   .about {
-    height: clamp(43.75rem, -56.25rem + 133.33vw, 68.75rem);
+    /* height: clamp(43.75rem, -56.25rem + 133.33vw, 68.75rem); */
+    height: clamp(43.75rem, -6.25rem + 66.67vw, 56.25rem);
   }
   .about .inner {
     width: clamp(31.25rem, -93.75rem + 166.67vw, 62.5rem);
@@ -148,5 +149,13 @@ PC用
   /* single-php-------- */
   .single-php .grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* ----------------------------
+大き目ディスプレイ
+------------------------------ */
+@media screen and (min-width: 1600px) {
+  .about {
+    background-position: center center;
   }
 }
