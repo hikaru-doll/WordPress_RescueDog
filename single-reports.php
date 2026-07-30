@@ -69,7 +69,14 @@ defined('ABSPATH') || exit;
       </tfoot>
       </tbody>
     </table>
-    <p class="pagenation">pagenation</p>
+    <!--前後ナビゲーション（シーケンシャルナビゲーション）  -->
+    <div class="pager">
+      <?php the_post_navigation(array(
+        'prev_text' => '前の年へ',
+        'next_text' => '次の年へ'
+      ));
+      ?>
+    </div>
   </div>
 </main>
 <?php get_footer(); ?>

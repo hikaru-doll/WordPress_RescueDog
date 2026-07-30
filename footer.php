@@ -1,7 +1,6 @@
 <?php
 defined('ABSPATH') || exit;
 ?>
-
 <!-- footer ----------------------->
 <footer class="footer">
   <div class="flex wrapper">

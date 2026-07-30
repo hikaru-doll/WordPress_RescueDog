@@ -6,11 +6,8 @@ defined('ABSPATH') || exit;
 <main class="archive-dogs main">
   <div class="wrapper">
     <h1 class="title"><?php echo post_type_archive_title(); ?></h1>
-
     <ul class="grid lists">
       <?php if (have_posts()): while (have_posts()): the_post(); ?>
-
-
           <li class="item">
             <a href="<?php the_permalink(); ?>">
               <div class="image">

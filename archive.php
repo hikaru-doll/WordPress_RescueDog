@@ -14,7 +14,6 @@ defined('ABSPATH') || exit;
           </li>
         <?php endwhile; ?>
       <?php endif; ?>
-
     </ul>
   </div>
 </main>

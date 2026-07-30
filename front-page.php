@@ -131,7 +131,6 @@ defined('ABSPATH') || exit;
         私たちは一貫して殺処分ゼロを目指し、一匹でも多くの命が安心して幸せな場所で過ごせるよう努めています。
         あなたと共に、未来を照らす一歩を踏み出していきたいと考えています。
       </p>
-      <!-- <a class="link">私たちについて詳しく読む</a> -->
       <a href="<?php echo esc_url(get_permalink(get_page_by_path('about'))); ?>" class="link">私たちについて詳しく読む</a>
     </div>
   </section>

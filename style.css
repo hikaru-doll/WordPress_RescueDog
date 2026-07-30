@@ -4,7 +4,6 @@ Theme Name: Rescue-Dog
 Author: hikaru doll
 Version: 3.1
 */
-
 /* ----------------
 共通
 ------------------ */
@@ -49,12 +48,33 @@ Version: 3.1
     transition: 0.2s;
   }
 }
-
 .button a:hover {
   background-color: var(--color-accent);
 }
 .pagenation {
   text-align: center;
+}
+.pager {
+  text-align: center;
+  padding: var(--space-m) 0;
+
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-l);
+  }
+  .nav-previous,
+  .nav-next {
+    & a {
+      transition: 0.2s;
+      padding: var(--space-xxs);
+      border-radius: 50%;
+    }
+  }
+  .nav-previous a:hover,
+  .nav-next a:hover {
+    background-color: var(--color-accent);
+  }
 }
 /*--------------------------
 header.php
@@ -149,9 +169,6 @@ header.php
   & a {
     transition: 0.3s ease;
   }
-  /* .sub-menu a::before {
-    content: "　--- ";
-  } */
 }
 .open-nav a:hover {
   margin-left: 10px;
@@ -202,4 +219,10 @@ footer.php
 .copyright {
   text-align: center;
   font-size: var(--text-s);
+}
+/* --------------
+index.php
+---------------- */
+.index {
+  height: 80vh;
 }

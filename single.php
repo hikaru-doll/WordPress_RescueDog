@@ -14,7 +14,14 @@ defined('ABSPATH') || exit;
       <?php else: ?>
       <?php endif; ?>
         </div>
-        <p class="pagenation">pagenation</p>
+        <!--前後ナビゲーション（シーケンシャルナビゲーション）  -->
+        <div class="pager">
+          <?php the_post_navigation(array(
+            'prev_text' => '前の記事へ',
+            'next_text' => '次の記事へ'
+          ));
+          ?>
+        </div>
   </div>
 </main>
 <?php get_footer(); ?>
