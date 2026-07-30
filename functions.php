@@ -60,15 +60,17 @@ function my_setup()
   ));
 }
 add_action('after_setup_theme', 'my_setup');
-// デフォルト投稿のトップページの件数制御---------
+// メインクエリの件数制御--------------------------------
 function my_custom_posts_per_page($query)
 {
   // 管理画面には影響を与えない
   if (! is_admin() && $query->is_main_query()) {
-
-    // 特定の投稿タイプアーカイブだけに適用する例
+    // ワンちゃん紹介（archive-dogs.php)に適用
     if (is_post_type_archive('dogs')) {
-      $query->set('posts_per_page', 4);
+      $query->set('posts_per_page', -1);
+      // お知らせ一覧（home.php)に適用
+    } elseif (is_home()) {
+      $query->set('posts_per_page', 10);
     }
   }
 }
