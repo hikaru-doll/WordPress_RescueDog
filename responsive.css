@@ -158,4 +158,7 @@ PC用
   .about {
     background-position: center center;
   }
+  .header.flex {
+    padding: var(--space-xxs) var(--space-l);
+  }
 }

@@ -398,7 +398,7 @@ single-dogs.php
 single-reports.php
 -------------------------- */
 .single-reports {
-  .grid {
+  .table .grid {
     grid-template-columns: 1.3fr 1fr;
   }
   .table {
