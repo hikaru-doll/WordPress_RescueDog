@@ -35,7 +35,7 @@ defined('ABSPATH') || exit;
     <ul class="lists">
       <?php
       $recent_posts = new WP_Query(array(
-        'post_type'      => 'post', // ★デフォルト投稿
+        'post_type'      => 'post', // デフォルト投稿
         'posts_per_page' => 3,
         'post_status'    => 'publish',
         'orderby'        => 'date',
@@ -53,13 +53,12 @@ defined('ABSPATH') || exit;
               <p class="link">もっと読む</p>
             </a>
           </li>
-
       <?php endwhile;
         wp_reset_postdata();
       endif; ?>
     </ul>
     <div class="button">
-      <a href="#">お知らせの一覧を見る</a>
+      <a href="<?php echo esc_url(get_permalink(get_option('page_for_posts'))); ?>">お知らせの一覧を見る</a>
     </div>
   </section>
   <!-- dogs -------------->
@@ -68,7 +67,7 @@ defined('ABSPATH') || exit;
     <ul class="lists grid">
       <?php
       $dogs_posts_latest = new WP_Query(array(
-        'post_type'      => 'dogs', // ★デフォルト投稿
+        'post_type'      => 'dogs',
         'posts_per_page' => 4,
         'post_status'    => 'publish',
         'orderby'        => 'date',
@@ -78,9 +77,6 @@ defined('ABSPATH') || exit;
       if ($dogs_posts_latest->have_posts()) :
         while ($dogs_posts_latest->have_posts()) : $dogs_posts_latest->the_post();
       ?>
-
-
-
           <li class="item">
             <a href="<?php the_permalink(); ?>">
               <div class="image">
@@ -93,17 +89,13 @@ defined('ABSPATH') || exit;
               </ul>
             </a>
           </li>
-
-        <?php
+      <?php
         endwhile;
-        wp_reset_postdata(); // ← 必須！
-      else :
-        ?>
-        <p>投稿がありません。</p>
-      <?php endif; ?>
+        wp_reset_postdata();
+      endif; ?>
     </ul>
     <div class="button">
-      <a href="#">ワンちゃんをもっと見る</a>
+      <a href="<?php echo esc_url(get_post_type_archive_link('dogs')); ?>">ワンちゃんをもっと見る</a>
     </div>
   </section>
   <!-- story -->
@@ -139,7 +131,8 @@ defined('ABSPATH') || exit;
         私たちは一貫して殺処分ゼロを目指し、一匹でも多くの命が安心して幸せな場所で過ごせるよう努めています。
         あなたと共に、未来を照らす一歩を踏み出していきたいと考えています。
       </p>
-      <a class="link">私たちについて詳しく読む</a>
+      <!-- <a class="link">私たちについて詳しく読む</a> -->
+      <a href="<?php echo esc_url(get_permalink(get_page_by_path('about'))); ?>" class="link">私たちについて詳しく読む</a>
     </div>
   </section>
   <!-- support -->
@@ -147,12 +140,12 @@ defined('ABSPATH') || exit;
     <h2 class="section-title">ご支援について</h2>
     <div class="grid">
       <div class="donation item">
-        <a href="">
+        <a href="<?php echo esc_url(get_permalink(get_page_by_path('support'))); ?>">
           <p>物資や寄付などの<br class="blank" />ご支援ページへ</p>
         </a>
       </div>
       <div class="volunteer item">
-        <a href="#">
+        <a href="<?php echo esc_url(get_permalink(get_page_by_path('volunteer'))); ?>">
           <p>ボランティアでの<br class="blank" />支援ページへ</p>
         </a>
       </div>
