@@ -8,20 +8,7 @@ defined('ABSPATH') || exit;
     <h1 class="title"><?php echo post_type_archive_title(); ?></h1>
 
     <ul class="grid lists">
-
-      <?php
-      $dogs_posts = new WP_Query(array(
-        'post_type'      => 'dogs', // ★デフォルト投稿
-        'posts_per_page' => -1,
-        'post_status'    => 'publish',
-        'orderby'        => 'date',
-        'order'          => 'DESC',
-      ));
-
-      if ($dogs_posts->have_posts()) :
-        while ($dogs_posts->have_posts()) : $dogs_posts->the_post();
-      ?>
-
+      <?php if (have_posts()): while (have_posts()): the_post(); ?>
 
 
           <li class="item">
@@ -42,18 +29,11 @@ defined('ABSPATH') || exit;
               </div>
             </a>
           </li>
-
-        <?php
-        endwhile;
-        wp_reset_postdata(); // ← 必須！
-      else :
-        ?>
+        <?php endwhile; ?>
+      <?php else: ?>
         <p>投稿がありません。</p>
       <?php endif; ?>
     </ul>
-  </div>
-  <div>
-    <p class="pagenation">pagenation</p>
   </div>
 </main>
 <?php get_footer(); ?>
