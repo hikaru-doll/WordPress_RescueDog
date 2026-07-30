@@ -99,7 +99,6 @@ header.php
 }
 .header .logo,
 .footer .logo {
-  /* 後でclamp()に変える*************************************** */
   width: 170px;
   width: clamp(10.625rem, -2.941rem + 17.65vw, 12.5rem);
 }

@@ -131,7 +131,6 @@ PC用
     grid-template-columns: 1fr 1fr;
   }
   .about {
-    /* height: clamp(43.75rem, -56.25rem + 133.33vw, 68.75rem); */
     height: clamp(43.75rem, -6.25rem + 66.67vw, 56.25rem);
   }
   .about .inner {
