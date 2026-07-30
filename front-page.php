@@ -21,10 +21,10 @@ defined('ABSPATH') || exit;
       </p>
       <div class="flex hero-buttons">
         <div class="hero-button search">
-          <a href="#">保護犬を探す</a>
+          <a href="<?php echo esc_url(get_post_type_archive_link('dogs')); ?>">保護犬を探す</a>
         </div>
         <div class="hero-button">
-          <a href="#support">支援をする</a>
+          <a href="<?php echo esc_url(get_permalink(get_page_by_path('support'))); ?>">支援をする</a>
         </div>
       </div>
     </div>

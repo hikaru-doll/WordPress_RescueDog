@@ -27,10 +27,7 @@ defined('ABSPATH') || exit;
           </li>
       <?php endwhile;
       endif; ?>
-
-
     </ul>
-    <p class="pagenation">pagenation</p>
   </div>
 </main>
 <?php get_footer(); ?>
