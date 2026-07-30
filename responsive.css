@@ -131,10 +131,10 @@ PC用
     grid-template-columns: 1fr 1fr;
   }
   .about {
-    height: 700px;
+    height: clamp(43.75rem, -56.25rem + 133.33vw, 68.75rem);
   }
   .about .inner {
-    width: 500px;
+    width: clamp(31.25rem, -93.75rem + 166.67vw, 62.5rem);
   }
   /* archive.php---------- */
   .archive-page .wrapper {
