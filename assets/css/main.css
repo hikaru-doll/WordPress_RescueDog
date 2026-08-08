@@ -201,7 +201,7 @@ archive-dogs.php
     & img {
       transition: 0.2s;
       width: 100%;
-      max-height: 400px;
+      max-height: 360px;
     }
   }
   .name {
