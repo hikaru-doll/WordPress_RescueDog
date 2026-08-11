@@ -197,6 +197,7 @@ footer.php
   color: var(--color-white);
   .attention {
     padding: var(--space-xxs);
+    font-size: var(--text-s);
   }
   & a {
     color: var(--color-white);
