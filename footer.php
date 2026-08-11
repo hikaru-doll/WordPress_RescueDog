@@ -3,6 +3,8 @@ defined('ABSPATH') || exit;
 ?>
 <!-- footer ----------------------->
 <footer class="footer">
+  <p class="attention">※本サイトは架空の施設を想定して制作したポートフォリオ作品です。実在する施設ではありません。</p>
+
   <div class="flex wrapper">
     <div class="item">
       <img

@@ -195,6 +195,9 @@ footer.php
   padding: var(--space-s) var(--space-xxs) var(--space-xxs);
   background-color: var(--color-main);
   color: var(--color-white);
+  .attention {
+    padding: var(--space-xxs);
+  }
   & a {
     color: var(--color-white);
   }
