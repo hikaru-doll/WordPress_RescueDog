@@ -78,24 +78,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     // それ以外（li同士の移動）はブラウザ標準のTab移動に任せる
   }
+
+  ham.addEventListener("click", toggleMenu);
+
+  // コピーライトの西暦を動的に出力する----------------------
+  const yearEl = document.getElementById("year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+  // topへ戻るボタン
+
+  // const go_top = document.querySelector(".back-to-top");
+  // window.addEventListener("scroll", () => {
+  //   let window_height = window.scrollY;
+  //   if (window_height > 700) {
+  //     go_top.classList.add("back-top-pop");
+  //   } else {
+  //     go_top.classList.remove("back-top-pop");
+  //   }
+  // });
 });
-ham.addEventListener("click", toggleMenu);
-
-// コピーライトの西暦を動的に出力する----------------------
-const yearEl = document.getElementById("year");
-if (yearEl) {
-  yearEl.textContent = new Date().getFullYear();
-}
-// topへ戻るボタン
-
-// const go_top = document.querySelector(".back-to-top");
-// window.addEventListener("scroll", () => {
-//   let window_height = window.scrollY;
-//   if (window_height > 700) {
-//     go_top.classList.add("back-top-pop");
-//   } else {
-//     go_top.classList.remove("back-top-pop");
-//   }
-// });
-
-// });
