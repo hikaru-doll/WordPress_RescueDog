@@ -63,7 +63,7 @@ defined('ABSPATH') || exit;
   </section>
   <!-- dogs -------------->
   <section class="dogs bg">
-    <h2 class="section-title">ワンちゃん紹介</h2>
+    <h2 class="section-title">ワンちゃん紹介da</h2>
     <ul class="lists grid">
       <?php
       $dogs_posts_latest = new WP_Query(array(
@@ -80,7 +80,7 @@ defined('ABSPATH') || exit;
           <li class="item">
             <a href="<?php the_permalink(); ?>">
               <div class="image">
-                <?php the_post_thumbnail(); ?>
+                <?php the_post_thumbnail('thumbnail'); ?>
               </div>
               <h3 class="name"><?php the_title(); ?></h3>
               <ul class="attribute flex">
