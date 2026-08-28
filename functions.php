@@ -38,9 +38,9 @@ function rescueDog_enqueue_styles()
   );
   wp_enqueue_script(
     'my-script',
-    get_theme_file_uri('/main.js'),
+    get_theme_file_uri('/main2.js'),
     array(),
-    filemtime(get_theme_file_path('/main.js')),
+    filemtime(get_theme_file_path('/main2.js')),
     true
   );
 }
@@ -181,3 +181,49 @@ function insert_custom_structured_data()
   }
 }
 add_action('wp_head', 'insert_custom_structured_data');
+
+
+// Walkerクラス
+class Accessible_Nav_Walker extends Walker_Nav_Menu
+{
+
+  // 各メニュー項目の開始タグ
+  function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
+  {
+    $has_children = in_array('menu-item-has-children', $item->classes);
+
+    $classes = empty($item->classes) ? array() : (array) $item->classes;
+    $class_names = join(' ', array_filter($classes));
+
+    $output .= '<li class="' . esc_attr($class_names) . '">';
+
+    if ($has_children) {
+      // 子メニューを持つ項目 → 開閉専用のbutton(遷移なし)
+      $output .= '<button type="button" class="menu-toggle-button" aria-haspopup="true" aria-expanded="false">';
+      $output .= esc_html($item->title);
+      $output .= '<span class="menu-toggle-icon" aria-hidden="true"></span>';
+      $output .= '</button>';
+    } else {
+      // 子メニューを持たない項目 → 通常のリンク
+      $output .= '<a href="' . esc_attr($item->url) . '">' . esc_html($item->title) . '</a>';
+    }
+  }
+
+  // 子メニュー(<ul>)の開始タグ
+  function start_lvl(&$output, $depth = 0, $args = null)
+  {
+    $output .= '<ul class="sub-menu">';
+  }
+
+  // 子メニュー(<ul>)の終了タグ
+  function end_lvl(&$output, $depth = 0, $args = null)
+  {
+    $output .= '</ul>';
+  }
+
+  // 各メニュー項目の終了タグ
+  function end_el(&$output, $item, $depth = 0, $args = null)
+  {
+    $output .= '</li>';
+  }
+}
