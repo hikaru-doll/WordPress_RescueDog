@@ -35,6 +35,8 @@ defined('ABSPATH') || exit;
         'container' => 'nav',
         'container_class' => 'header-nav',
         'menu_class' => 'nav-menu',
+        // サブメニューの開閉の<button>を挿入するために書き換える
+        'walker' => new Accessible_Nav_Walker(),
       )
     ); ?>
     <!-- SP用のハンバーガーメニューのナビゲーション -->
