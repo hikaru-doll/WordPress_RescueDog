@@ -137,3 +137,47 @@ register_nav_menus([
   'hamburger_nav' => 'ハンバーガーナビ',
   'footer_nav' => 'フッターナビ',
 ]);
+
+// 構造化データ-----------------------------------
+function insert_custom_structured_data()
+{
+  // トップページの場合
+  if (is_front_page() || is_home()) {
+?>
+    <script type="application/ld-json">
+      {
+          "@context": "https://schema.org",
+          "@type": "AnimalShelter",
+          "name": "Rescue Dog",
+          "image": "https://hikarudoll.xsrv.jp/rescue-dog/assets/img/mainvisual-pc.webp",
+          "url": "https://hikarudoll.xsrv.jp/rescue-dog",
+          "telephone": "0000-00-0000",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "宝塚市子犬町0-0-0",
+            "addressLocality": "兵庫県",
+            "postalCode": "000-000",
+            "addressCountry": "JP"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+              ],
+              "opens": "9:00",
+              "closes": "18:00"
+            }
+          ]
+        }        
+    </script>
+<?php
+  }
+}
+add_action('wp_head', 'insert_custom_structured_data');
