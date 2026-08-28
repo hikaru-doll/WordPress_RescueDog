@@ -86,8 +86,14 @@ header.php
   width: 100%;
   height: auto;
   & a,
-  & li {
+  & li,
+  & button {
     color: var(--color-white);
+  }
+  & button {
+    background-color: var(--color-main);
+    border: none;
+    font-size: 16px;
   }
 }
 .header .reception a,
