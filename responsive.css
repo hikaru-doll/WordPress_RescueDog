@@ -116,8 +116,10 @@ PC用
   .nav-menu li {
     position: relative;
   }
-  .nav-menu li:has(.sub-menu):hover .sub-menu,
-  .nav-menu li:has(.sub-menu):focus-within .sub-menu {
+  .nav-menu li:has(.sub-menu):hover .sub-menu {
+    display: block;
+  }
+  .nav-menu button[aria-expanded="true"] + .sub-menu {
     display: block;
   }
   .bg {
