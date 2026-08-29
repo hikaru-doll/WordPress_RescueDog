@@ -154,9 +154,9 @@ function insert_custom_structured_data()
           "telephone": "0000-00-0000",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "宝塚市子犬町0-0-0",
+            "streetAddress": "宝塚市子犬町1-2-3",
             "addressLocality": "兵庫県",
-            "postalCode": "000-000",
+            "postalCode": "665-000",
             "addressCountry": "JP"
           },
           "openingHoursSpecification": [
