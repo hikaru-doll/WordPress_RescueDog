@@ -105,9 +105,9 @@ header.php
 .header .reception a,
 .header .reception li,
 .footer dt,
-.footer dd {
+.footer dd,
+.footer a {
   font-size: clamp(0.75rem, 0.636rem + 0.57vw, 1.063rem);
-  font-size: clamp(0.75rem, 0.438rem + 0.71vw, 1.063rem);
 }
 .header .logo,
 .footer .logo {
@@ -207,6 +207,9 @@ footer.php
   padding: var(--space-s) var(--space-xxs) var(--space-xxs);
   background-color: var(--color-main);
   color: var(--color-white);
+  .wrapper {
+    max-width: 1200px;
+  }
   .attention {
     padding: var(--space-xxs);
     font-size: var(--text-s);
@@ -217,13 +220,16 @@ footer.php
   .logo {
     margin-bottom: var(--space-xxs);
   }
-  .flex {
-    justify-content: space-around;
+  .footer-container.grid {
     margin-bottom: var(--space-m);
+  }
+  .access {
+    overflow: hidden;
+    margin: var(--space-s) 0;
   }
 }
 .reception.grid {
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 3fr;
 }
 .footer-nav a {
   line-height: 1.8;
