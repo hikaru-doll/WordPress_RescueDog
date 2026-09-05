@@ -112,6 +112,7 @@ PC用
   .nav-menu {
     display: flex;
     gap: var(--space-s);
+    padding-right: var(--space-xs);
   }
   .nav-menu li {
     position: relative;
