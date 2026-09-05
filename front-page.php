@@ -11,7 +11,7 @@ defined('ABSPATH') || exit;
       <source
         media="(min-width: 767px)"
         srcset="<?php echo $theme_uri; ?>/assets/img/mainvisual-pc.webp" />
-      <img src="<?php echo $theme_uri; ?>/assets/img/mainvisual-sp.webp" alt="犬と人" />
+      <img src="<?php echo $theme_uri; ?>/assets/img/mainvisual-sp.webp" alt="犬と人" fetchpriority="high" />
     </picture>
     <div class="catchphrase">
       <h2>小さな命を、大切な家族へ。</h2>
