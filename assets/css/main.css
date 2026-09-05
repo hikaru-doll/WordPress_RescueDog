@@ -278,11 +278,14 @@ home.php
 /* -------------------------
 page-contact.php
 -------------------------- */
-.contact-form {
+.contact-php {
   max-width: 700px;
   margin: 0 auto;
   .fluentform {
     margin: var(--space-m) 0;
+  }
+  .span {
+    color: orangered;
   }
 }
 /* -------------------------
