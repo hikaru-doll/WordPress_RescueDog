@@ -103,7 +103,9 @@ header.php
   }
 }
 .header .reception a,
-.header .reception li,
+.header .reception li {
+  font-size: 0.9rem;
+}
 .footer dt,
 .footer dd,
 .footer a {
