@@ -204,7 +204,7 @@ class Accessible_Nav_Walker extends Walker_Nav_Menu
       $output .= '</button>';
     } else {
       // 子メニューを持たない項目 → 通常のリンク
-      $output .= '<a href="' . esc_attr($item->url) . '">' . esc_html($item->title) . '</a>';
+      $output .= '<a href="' . esc_url($item->url) . '">' . esc_html($item->title) . '</a>';
     }
   }
 
