@@ -210,14 +210,14 @@ archive-dogs.php
     margin-bottom: var(--space-xs);
   }
   .attribute {
-    font-size: var(--text-);
+    font-size: var(--text-s);
     justify-content: space-around;
     margin-bottom: var(--space-xxs);
   }
 
   .link {
     text-align: right;
-    margin: var(--space-xxs) 0 var(--space-xs);
+    margin: var(--space-xxs) 0 var(--space-xxs);
   }
   .item:hover img {
     scale: 1.1;
