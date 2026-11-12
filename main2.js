@@ -88,8 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   // 🍔ボタンをクリックしたときにtoggleMenu()を実行
   ham.addEventListener("click", toggleMenu);
-  // 🍔メニューが開いてる状態でPCサイズ（768px以上）になったら、メニューを閉じる
-  const mediaQuery = window.matchMedia("(min-width: 768px)");
+  // 🍔メニューが開いてる状態でPCサイズ（1200px以上）になったら、メニューを閉じる
+  const mediaQuery = window.matchMedia("(min-width: 1200px)");
   function handleResize(e) {
     if (e.matches && isOpen) {
       // （aria-expandedをfalseにし、フォーカスロックやスクロール解除）
