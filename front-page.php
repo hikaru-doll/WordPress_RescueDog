@@ -64,7 +64,7 @@ defined('ABSPATH') || exit;
   </section>
   <!-- dogs -------------->
   <section class="dogs bg">
-    <h2 class="section-title">ワンちゃん紹介da</h2>
+    <h2 class="section-title">ワンちゃん紹介</h2>
     <ul class="lists grid">
       <?php
       $dogs_posts_latest = new WP_Query(array(
