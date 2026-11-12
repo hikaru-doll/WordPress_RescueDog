@@ -17,11 +17,11 @@ defined('ABSPATH') || exit;
   <header class="header flex">
     <!-- <div class="flex"> -->
     <div class="flex">
-      <h1 class="logo">
-        <a href="#">
+      <div class="logo">
+        <a href="<?php echo esc_url(home_url()); ?>">
           <img src="<?php echo esc_url(get_theme_file_uri()); ?>/assets/img/RescueDog.png" alt="レスキュードッグのロゴ" />
         </a>
-      </h1>
+      </div>
       <ul class="reception">
         <li>電話番号:<a href="tel:0000-00-0000">0000-00-0000</a></li>
         <li>受付時間:午前9時～午後6時</li>
