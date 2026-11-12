@@ -1,7 +1,7 @@
- # Rescue Dog
+ # 動物保護施設
 
  ## DEMO
-🔗[Rescue Dog](https://hikarudoll.xsrv.jp/rescue-dog/)  
+🔗[動物保護施設Rescue Dog](https://hikarudoll.xsrv.jp/rescue-dog/)  
  ※ポートフォリオ用の架空サイトです。実在する施設ではありません。
  ## 使用技術
  HTML / CSS / JavaScript / PHP / WordPress / figma
