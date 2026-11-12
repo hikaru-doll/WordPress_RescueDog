@@ -44,6 +44,5 @@ defined('ABSPATH') || exit;
       ?>
     </div>
   </div>
-  </div>
 </main>
 <?php get_footer(); ?>
