@@ -19,10 +19,10 @@ defined('ABSPATH') || exit;
                   <li>年齢：<?php the_field("age"); ?></li>
                   <li>性別：<?php the_field("sex"); ?></li>
                 </ul>
-                <p class="content">
+                <div class="content">
                   <?php echo esc_html(wp_trim_words(get_field('profile'), 35, '…')); ?>
-                </p>
-                <p class="link"><?php the_title(); ?>をもっと知る</p>
+                </div>
+                <div class="link"><?php the_title(); ?>をもっと知る</div>
               </div>
             </a>
           </li>
