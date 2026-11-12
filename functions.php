@@ -144,38 +144,37 @@ function insert_custom_structured_data()
   // トップページの場合
   if (is_front_page() || is_home()) {
 ?>
-    <script type="application/ld-json">
+    <script type="application/ld+json">
       {
-          "@context": "https://schema.org",
-          "@type": "AnimalShelter",
-          "name": "Rescue Dog",
-          "image": "https://hikarudoll.xsrv.jp/rescue-dog/assets/img/mainvisual-pc.webp",
-          "url": "https://hikarudoll.xsrv.jp/rescue-dog",
-          "telephone": "0000-00-0000",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "宝塚市子犬町1-2-3",
-            "addressLocality": "兵庫県",
-            "postalCode": "665-000",
-            "addressCountry": "JP"
-          },
-          "openingHoursSpecification": [
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-                "Sunday"
-              ],
-              "opens": "9:00",
-              "closes": "18:00"
-            }
-          ]
-        }        
+        "@context": "https://schema.org",
+        "@type": "AnimalShelter",
+        "name": "Rescue Dog",
+        "image": "https://hikarudoll.xsrv.jp/rescue-dog/assets/img/mainvisual-pc.webp",
+        "url": "https://hikarudoll.xsrv.jp/rescue-dog",
+        "telephone": "0000-00-0000",
+        "address": {
+          "@type": "PostalAddress",
+          "postalCode": "665-0000",
+          "addressRegion": "兵庫県",
+          "addressLocality": "宝塚市",
+          "streetAddress": "子犬町1-2-3",
+          "addressCountry": "JP"
+        },
+        "openingHoursSpecification": [{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "9:00",
+          "closes": "18:00"
+        }]
+      }
     </script>
 <?php
   }
