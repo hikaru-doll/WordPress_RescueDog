@@ -120,7 +120,7 @@ front-page.php
 }
 /* about ------------- */
 .about {
-  background-image: url(../img/bg.webp);
+  background-image: url(../img/bg.jpg);
   background-size: cover;
   background-position: 90% 0;
   color: var(--color-white);
