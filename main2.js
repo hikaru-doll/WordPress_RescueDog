@@ -8,9 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // 将来配列のメソッドを使う時を考慮して、配列にしておく（NodeListではなくて）
   const navLinks = Array.from(navMenu.querySelectorAll("li > a, li > button"));
 
-  console.log(navMenu);
-  console.log(navLinks);
-
   // 🍔用*************************
   let isOpen = false;
   function openMenu() {
@@ -103,7 +100,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // --------------------
   // 親メニューを取得
   const parentItems = document.querySelectorAll(".menu-item-has-children");
-  console.log(parentItems);
   // サブメニューを開いた時のWAI-ARIA属性を指定
   function openSubMenu(button) {
     button.setAttribute("aria-expanded", "true");
