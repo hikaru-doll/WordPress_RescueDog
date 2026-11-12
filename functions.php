@@ -38,9 +38,9 @@ function rescueDog_enqueue_styles()
   );
   wp_enqueue_script(
     'my-script',
-    get_theme_file_uri('/main2.js'),
+    get_theme_file_uri('/main.js'),
     array(),
-    filemtime(get_theme_file_path('/main2.js')),
+    filemtime(get_theme_file_path('/main.js')),
     true
   );
 }
