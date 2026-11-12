@@ -50,7 +50,7 @@ defined('ABSPATH') || exit;
     ); ?>
     <button
       class="ham"
-      aria-controls="open-nav"
+      aria-controls="header-nav"
       aria-expanded="false"
       aria-label="メニューを開く">
       <span class="ham1"></span>
