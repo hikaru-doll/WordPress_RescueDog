@@ -231,7 +231,7 @@ archive.php
 -------------------------- */
 /* footer以下白い余白が出るのを防ぐため */
 .archive-page {
-  height: 50vh;
+  min-height: 50vh;
 }
 /* -------------------------
 home.php
@@ -350,8 +350,8 @@ page.php
 /* プライバシーポリシーのページ */
 .page-id-3 {
   & h2 {
-    color: var(--color-sub2);
-    border-bottom: 1px solid var(--color-sub2);
+    color: var(--color-accent);
+    border-bottom: 1px dotted var(--color-accent);
   }
 }
 
