@@ -29,5 +29,8 @@ defined('ABSPATH') || exit;
       endif; ?>
     </ul>
   </div>
+  <div class="pager">
+    <?php the_posts_pagination(); ?>
+  </div>
 </main>
 <?php get_footer(); ?>
