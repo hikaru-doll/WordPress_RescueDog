@@ -16,11 +16,11 @@ defined('ABSPATH') || exit;
                 </div>
                 <div class="text">
                   <h2 class="item-title"><?php the_title(); ?></h2>
-                  <time class="date"><?php the_date("Y. m. d"); ?></p>
-                    <p class="content">
-                      <?php echo esc_html(wp_trim_words(get_the_content(), 40, '…')); ?>
-                    </p>
-                    <p class="link">続きを読む</p>
+                  <time class="date"><?php echo get_the_date(); ?></time>
+                  <p class="content">
+                    <?php echo esc_html(wp_trim_words(get_the_content(), 40, '…')); ?>
+                  </p>
+                  <p class="link">続きを読む</p>
                 </div>
               </div>
             </a>

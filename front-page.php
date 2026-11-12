@@ -14,7 +14,7 @@ defined('ABSPATH') || exit;
       <img src="<?php echo $theme_uri; ?>/assets/img/mainvisual-sp.webp" alt="犬と人" fetchpriority="high" />
     </picture>
     <div class="catchphrase">
-      <h2>小さな命を、大切な家族へ。</h2>
+      <h1>Rescue Dog <br>小さな命を、大切な家族へ。</h1>
       <p>
         西宮・宝塚エリアで活動する小さな動物保護施設。<br class="blank" />
         様々な理由で保護した犬を<br />新しい家族へ迎え入れる活動をしています。
@@ -45,7 +45,8 @@ defined('ABSPATH') || exit;
         while ($recent_posts->have_posts()) : $recent_posts->the_post(); ?>
           <li class="item">
             <a href="<?php the_permalink(); ?>">
-              <time class="date"><?php the_date(); ?></time>
+              <time class="date"><?php echo get_the_date(); ?></time>
+
               <h3 class="item-title"><?php the_title(); ?></h3>
               <p class="text">
                 <?php echo esc_html(wp_trim_words(get_the_content(), 40, '…')); ?>
