@@ -58,6 +58,11 @@ function my_setup()
     'gallery',
     'caption',
   ));
+  register_nav_menus([ // WordPress標準機能のメニューを登録する
+    'global_nav' => 'グローバルナビ',
+    'hamburger_nav' => 'ハンバーガーナビ',
+    'footer_nav' => 'フッターナビ',
+  ]);
 }
 add_action('after_setup_theme', 'my_setup');
 // メインクエリの件数制御--------------------------------
@@ -97,9 +102,7 @@ function create_my_post_type()
       'show_in_rest' => true,
       'menu_position' => 4, //デフォルトポストの下
       'menu_icon' => 'dashicons-pets',
-      'taxonomies' => array(
-        'category'
-      ),
+
       'supports' => array(
         'title',
         'editor',
@@ -118,9 +121,7 @@ function create_my_post_type()
       'show_in_rest' => true,
       'menu_position' => 4,
       'menu_icon' => 'dashicons-money-alt',
-      'taxonomies' => array(
-        'category'
-      ),
+
       'supports' => array(
         'title',
         'editor',
@@ -131,12 +132,7 @@ function create_my_post_type()
   );
 }
 add_action('init', 'create_my_post_type');
-// WordPress標準機能のメニューを登録する-----------
-register_nav_menus([
-  'global_nav' => 'グローバルナビ',
-  'hamburger_nav' => 'ハンバーガーナビ',
-  'footer_nav' => 'フッターナビ',
-]);
+
 
 // 構造化データ-----------------------------------
 function insert_custom_structured_data()
