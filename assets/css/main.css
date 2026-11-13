@@ -158,22 +158,24 @@ front-page.php
   .item {
     background-size: cover;
     width: 80%;
+    max-width: 400px;
     height: 200px;
-    position: relative;
-    cursor: pointer;
     transition: 0.4s;
     margin: var(--space-xs) auto;
     outline: 5px solid transparent;
     & a {
-      position: absolute;
-      bottom: 15%;
+      display: block;
+      position: relative;
+    }
+    .item-button {
       font-weight: bold;
       font-size: var(--title-h2);
       color: var(--color-white);
       padding: var(--space-xxs) var(--space-xs);
       background-color: rgba(0, 0, 0, 0.3);
-      display: grid;
-      transition: 0.3s;
+      display: inline-block;
+      position: absolute;
+      bottom: -200px;
     }
   }
   .donation:hover,
@@ -316,19 +318,10 @@ page.php
     margin: var(--space-s) 0;
   }
 }
-/* page-volunteer.php */
-.page-volunteer ul {
-  padding: 1rem;
+/* page-support.php*/
+.support .wrapper {
+  max-width: 700px;
 }
-.page-volunteer li {
-  margin-bottom: 0.5rem;
-  list-style: disc;
-}
-/* page-flow.php */
-.page-flow p {
-  padding: 0 1rem;
-}
-/* ご支援についてのぺージ */
 .page-id-20 .main {
   .grid {
     grid-template-columns: 1fr 3fr;
@@ -346,7 +339,20 @@ page.php
     margin-bottom: var(--space-s);
   }
 }
-/* 私たちについてのページ */
+/* page-volunteer.php */
+.page-volunteer ul {
+  padding: 1rem;
+}
+.page-volunteer li {
+  margin-bottom: 0.5rem;
+  list-style: disc;
+}
+/* page-flow.php */
+.page-flow p {
+  padding: 0 1rem;
+}
+
+/* page-about.php */
 .page-id-18 .main {
   .section {
     margin-bottom: var(--space-m);
