@@ -85,8 +85,19 @@ defined('ABSPATH') || exit;
               </div>
               <h3 class="name"><?php the_title(); ?></h3>
               <ul class="attribute flex">
-                <li>年齢：<?php the_field("age"); ?></li>
-                <li>性別：<?php the_field("sex"); ?></li>
+                <?php
+                $post_id = get_the_ID();
+                $get_dog_field = function ($field_name) use ($post_id) {
+                  if (function_exists('get_field')) {
+                    return get_field($field_name, $post_id);
+                  }
+                  return get_post_meta($post_id, $field_name, true);
+                };
+                $sex = $get_dog_field('sex');
+                $age = $get_dog_field('age');
+                ?>
+                <li>年齢：<?php echo esc_html($age); ?></li>
+                <li>性別：<?php echo esc_html($sex); ?></li>
               </ul>
             </a>
           </li>
@@ -141,12 +152,12 @@ defined('ABSPATH') || exit;
     <div class="grid">
       <div class="donation item">
         <a href="<?php echo esc_url(get_permalink(get_page_by_path('support'))); ?>">
-          <p>物資や寄付などの<br class="blank" />ご支援ページへ</p>
+          <p class="item-button">物資や寄付などの<br class="blank" />ご支援ページへ</p>
         </a>
       </div>
       <div class="volunteer item">
         <a href="<?php echo esc_url(get_permalink(get_page_by_path('volunteer'))); ?>">
-          <p>ボランティアでの<br class="blank" />支援ページへ</p>
+          <p class="item-button">ボランティアでの<br class="blank" />支援ページへ</p>
         </a>
       </div>
     </div>
