@@ -316,6 +316,18 @@ page.php
     margin: var(--space-s) 0;
   }
 }
+/* page-volunteer.php */
+.page-volunteer ul {
+  padding: 1rem;
+}
+.page-volunteer li {
+  margin-bottom: 0.5rem;
+  list-style: disc;
+}
+/* page-flow.php */
+.page-flow p {
+  padding: 0 1rem;
+}
 /* ご支援についてのぺージ */
 .page-id-20 .main {
   .grid {
