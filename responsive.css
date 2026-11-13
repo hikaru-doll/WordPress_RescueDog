@@ -31,6 +31,9 @@
   .support .blank {
     display: none;
   }
+  .support .grid {
+    grid-template-columns: 1fr 1fr;
+  }
 
   /* archive-dogs.php------ */
   .archive-dogs .grid {
@@ -60,7 +63,7 @@
     }
   }
   /* single-reports.php----- */
-  .single-reports .wrapper {
+  .single-reports.main .wrapper {
     max-width: 700px;
   }
   /* single-php------------- */
