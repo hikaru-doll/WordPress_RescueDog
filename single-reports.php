@@ -12,80 +12,82 @@ defined('ABSPATH') || exit;
       寄付をして下さった方々に心より感謝いたします。
     </p>
     <!-- 収入の部 -->
-    <table class="table">
-      <thead>
-        <tr class="grid">
-          <th scope="col">収入</th>
-          <th scope="col">金額</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="grid">
-          <th scope="row">前年度繰越金</th>
-          <td><?php the_field('carryover'); ?>円</td>
-        </tr>
-        <tr class="grid">
-          <th scope="row">寄付（現金）</th>
-          <td><?php the_field('cash'); ?>円</td>
-        </tr>
-        <tr class="grid">
-          <th scope="row">寄付（クレジットカード）</th>
-          <td><?php the_field('card'); ?>円</td>
-        </tr>
-        <tr class="grid">
-          <th scope="row">募金</th>
-          <td><?php the_field('fund_raising'); ?>円</td>
-        </tr>
-        <tr class="grid">
-          <th scope="row">譲渡による収入</th>
-          <td><?php the_field('transfer_money'); ?>円</td>
-        </tr>
+    <?php if (function_exists('the_field')) : ?>
+      <table class="table">
+        <thead>
+          <tr class="grid">
+            <th scope="col">収入</th>
+            <th scope="col">金額</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="grid">
+            <th scope="row">前年度繰越金</th>
+            <td><?php the_field('carryover'); ?>円</td>
+          </tr>
+          <tr class="grid">
+            <th scope="row">寄付（現金）</th>
+            <td><?php the_field('cash'); ?>円</td>
+          </tr>
+          <tr class="grid">
+            <th scope="row">寄付（クレジットカード）</th>
+            <td><?php the_field('card'); ?>円</td>
+          </tr>
+          <tr class="grid">
+            <th scope="row">募金</th>
+            <td><?php the_field('fund_raising'); ?>円</td>
+          </tr>
+          <tr class="grid">
+            <th scope="row">譲渡による収入</th>
+            <td><?php the_field('transfer_money'); ?>円</td>
+          </tr>
 
-      </tbody>
-      <tfoot>
-        <tr class="grid">
-          <th scope="row">合計</th>
-          <td><?php the_field('income'); ?>円</td>
-        </tr>
-      </tfoot>
-    </table>
-    <!-- 支出の部 -->
-    <table class="table">
-      <thead>
-        <tr class="grid">
-          <th scope="col">支出</th>
-          <th scope="col">金額</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="grid">
-          <th scope="row">医療費</th>
-          <td><?php the_field('medical'); ?>円</td>
-        </tr>
-        <tr class="grid">
-          <th scope="row">食費（フード・おやつ）</th>
-          <td><?php the_field('food'); ?>円</td>
-        </tr>
-        <tr class="grid">
-          <th scope="row">消耗品費</th>
-          <td><?php the_field('consumables'); ?>円</td>
-        </tr>
-        <tr class="grid">
-          <th scope="row">光熱費/通信費</th>
-          <td><?php the_field('communication'); ?>円</td>
-        </tr>
-        <tr class="grid">
-          <th scope="row">雑費</th>
-          <td><?php the_field('rough'); ?>円</td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr class="grid">
-          <th scope="row">合計</th>
-          <td><?php the_field('expense'); ?>円</td>
-        </tr>
-      </tfoot>
-    </table>
+        </tbody>
+        <tfoot>
+          <tr class="grid">
+            <th scope="row">合計</th>
+            <td><?php the_field('income'); ?>円</td>
+          </tr>
+        </tfoot>
+      </table>
+      <!-- 支出の部 -->
+      <table class="table">
+        <thead>
+          <tr class="grid">
+            <th scope="col">支出</th>
+            <th scope="col">金額</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="grid">
+            <th scope="row">医療費</th>
+            <td><?php the_field('medical'); ?>円</td>
+          </tr>
+          <tr class="grid">
+            <th scope="row">食費（フード・おやつ）</th>
+            <td><?php the_field('food'); ?>円</td>
+          </tr>
+          <tr class="grid">
+            <th scope="row">消耗品費</th>
+            <td><?php the_field('consumables'); ?>円</td>
+          </tr>
+          <tr class="grid">
+            <th scope="row">光熱費/通信費</th>
+            <td><?php the_field('communication'); ?>円</td>
+          </tr>
+          <tr class="grid">
+            <th scope="row">雑費</th>
+            <td><?php the_field('rough'); ?>円</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr class="grid">
+            <th scope="row">合計</th>
+            <td><?php the_field('expense'); ?>円</td>
+          </tr>
+        </tfoot>
+      </table>
+    <?php endif; ?>
     <!--前後ナビゲーション（シーケンシャルナビゲーション）  -->
     <div class="pager">
       <?php the_post_navigation(array(
