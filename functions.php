@@ -4,7 +4,7 @@ defined('ABSPATH') || exit;
 <?php
 function rescueDog_enqueue_styles()
 {
-  // CSS・JSファイル読み込み----------
+  // CSS・JSファイル読み込み
   $uri = get_theme_file_uri();
   wp_enqueue_style(
     'variable',
@@ -46,7 +46,7 @@ function rescueDog_enqueue_styles()
 }
 add_action('wp_enqueue_scripts', 'rescueDog_enqueue_styles');
 
-//セットアップ------------------------
+//セットアップ
 function my_setup()
 {
   add_theme_support('post-thumbnails'); // アイキャッチ画像を有効化
@@ -65,7 +65,7 @@ function my_setup()
   ]);
 }
 add_action('after_setup_theme', 'my_setup');
-// メインクエリの件数制御--------------------------------
+// メインクエリの件数制御
 function my_custom_posts_per_page($query)
 {
   // 管理画面には影響を与えない
@@ -80,7 +80,7 @@ function my_custom_posts_per_page($query)
   }
 }
 add_action('pre_get_posts', 'my_custom_posts_per_page');
-// デフォルト投稿の管理画面メニューのラベル変更---------
+// デフォルト投稿の管理画面メニューのラベル変更
 add_action(
   'admin_menu',
   function () {
@@ -88,7 +88,7 @@ add_action(
     $menu[5][0] = 'お知らせ♬';
   }
 );
-// カスタム投稿タイプの使用----------------------
+// カスタム投稿タイプの使用
 function create_my_post_type()
 {
   register_post_type(
@@ -134,7 +134,7 @@ function create_my_post_type()
 add_action('init', 'create_my_post_type');
 
 
-// 構造化データ-----------------------------------
+// 構造化データ
 function insert_custom_structured_data()
 {
   // トップページの場合

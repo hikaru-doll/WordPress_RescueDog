@@ -2,7 +2,7 @@
 defined('ABSPATH') || exit;
 ?>
 <?php get_header(); ?>
-<!-- main ------------------------->
+<!-- main -->
 <main class="archive-page main">
   <div class="wrapper">
     <h1 class="title">収支報告書一覧</h1>

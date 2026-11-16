@@ -2,7 +2,7 @@
 defined('ABSPATH') || exit;
 ?>
 <?php get_header(); ?>
-<!-- main ------------------------->
+<!-- main -->
 <main class="single-reports main">
   <div class="wrapper">
     <h1 class="title"><?php the_title(); ?>年　収支報告書</h1>
@@ -41,7 +41,6 @@ defined('ABSPATH') || exit;
             <th scope="row">譲渡による収入</th>
             <td><?php the_field('transfer_money'); ?>円</td>
           </tr>
-
         </tbody>
         <tfoot>
           <tr class="grid">

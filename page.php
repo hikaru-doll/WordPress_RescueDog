@@ -2,7 +2,7 @@
 defined('ABSPATH') || exit;
 ?>
 <?php get_header(); ?>
-<!-- main ------------------------->
+<!-- main -->
 <main class="page-php main">
   <div class="wrapper">
     <?php if (have_posts()): while (have_posts()): the_post(); ?>

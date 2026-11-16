@@ -2,7 +2,7 @@
 defined('ABSPATH') || exit;
 ?>
 <?php get_header(); ?>
-<!-- main ------------------------->
+<!-- main -->
 <main class="archive-dogs main">
   <div class="wrapper">
     <h1 class="title"><?php echo post_type_archive_title(); ?></h1>

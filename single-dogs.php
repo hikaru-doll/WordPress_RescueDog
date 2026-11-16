@@ -2,23 +2,18 @@
 defined('ABSPATH') || exit;
 ?>
 <?php get_header(); ?>
-<!-- main ------------------------->
+<!-- main -->
 <main class="single-dogs main">
   <div class="wrapper">
     <?php if (have_posts()): while (have_posts()): the_post(); ?>
-
-
         <?php
         $post_id = get_the_ID();
-
         $get_dog_field = function ($field_name) use ($post_id) {
           if (function_exists('get_field')) {
             return get_field($field_name, $post_id);
           }
-
           return get_post_meta($post_id, $field_name, true);
         };
-
         $sex = $get_dog_field('sex');
         $age = $get_dog_field('age');
         $vaccine = $get_dog_field('vaccine');
@@ -27,9 +22,6 @@ defined('ABSPATH') || exit;
         $reason = $get_dog_field('reason');
         $profile = $get_dog_field('profile');
         ?>
-
-
-
         <div class="content grid">
           <div class="image">
             <?php if (has_post_thumbnail()): ?>

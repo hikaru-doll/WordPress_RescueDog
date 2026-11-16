@@ -12,7 +12,7 @@ defined('ABSPATH') || exit;
 
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
-  <!-- header ----------------------->
+  <!-- header -->
   <header class="header flex">
     <!-- <div class="flex"> -->
     <div class="flex">
@@ -26,7 +26,7 @@ defined('ABSPATH') || exit;
         <li>受付時間:午前9時～午後6時</li>
       </ul>
     </div>
-    <!-- WP標準機能のメニューマネージャー使用 ----->
+    <!-- WP標準機能のメニューマネージャー使用 -->
     <!-- PC用のヘッダーのナビゲーション -->
     <?php wp_nav_menu(
       array(

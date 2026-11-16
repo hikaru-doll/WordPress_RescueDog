@@ -2,7 +2,7 @@
 defined('ABSPATH') || exit;
 ?>
 <?php get_header(); ?>
-<!-- main ------------------------->
+<!-- main -->
 <main class="page-php support main">
   <div class="wrapper">
     <?php if (have_posts()): while (have_posts()): the_post(); ?>
@@ -18,21 +18,15 @@ defined('ABSPATH') || exit;
           </p>
           <?php
           $post_id = get_the_ID();
-
           $get_support_field = function ($field_name) use ($post_id) {
             if (function_exists('get_field')) {
               return get_field($field_name, $post_id);
             }
-
             return get_post_meta($post_id, $field_name, true);
           };
-
           $necessary = $get_support_field('necessary');
           $happy = $get_support_field('happy');
           ?>
-
-
-
           <div class="necessary">
             <ul>
               <li>
@@ -71,8 +65,6 @@ defined('ABSPATH') || exit;
             <dd>レスキュードッグ</dd>
           </dl>
         </section>
-
-
       <?php endwhile; ?>
     <?php endif; ?>
 </main>

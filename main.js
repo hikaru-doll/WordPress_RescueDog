@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // --------------------
-  //  ハンバーガーメニュー
-  // --------------------
+  /*------------------
+  ハンバーガーメニュー
+   ------------------- */
   const ham = document.querySelector(".ham");
   const body = document.body;
   const navMenu = document.querySelector(".open-nav .nav-menu");
@@ -95,9 +95,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   mediaQuery.addEventListener("change", handleResize);
 
-  // --------------------
-  //  サブメニュー（アコーディオン）
-  // --------------------
+  /*------------------
+  サブメニュー（アコーディオン）
+   ------------------- */
   // 親メニューを取得
   const parentItems = document.querySelectorAll(".menu-item-has-children");
   // サブメニューを開いた時のWAI-ARIA属性を指定
@@ -163,10 +163,9 @@ document.addEventListener("DOMContentLoaded", () => {
       closeAllSubMenus();
     }
   });
-
-  //-----------------------------------
-  // コピーライトの西暦を動的に出力する
-  // ----------------------------------
+  /*------------------
+  コピーライトの西暦を動的に出力する
+   ------------------- */
   const year = document.getElementById("year");
   if (year) {
     year.textContent = new Date().getFullYear();

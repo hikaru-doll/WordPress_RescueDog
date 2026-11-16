@@ -2,7 +2,7 @@
 defined('ABSPATH') || exit;
 ?>
 <?php get_header(); ?>
-<!-- main ------------------------->
+<!-- main -->
 <main class="home-php main">
   <div class="bg">
     <h1 class="title">お知らせ一覧</h1>

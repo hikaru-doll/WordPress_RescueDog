@@ -2,16 +2,14 @@
 defined('ABSPATH') || exit;
 ?>
 <?php get_header(); ?>
-<!-- main ------------------------->
+<!-- main -->
 <main class="single-php main">
   <div class="wrapper">
     <?php if (have_posts()): while (have_posts()): the_post(); ?>
         <h1 class="single-title"><?php the_title(); ?></h1>
-
         <time class="date" datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>">
           <?php echo esc_html(get_the_date('Y.m.d')); ?>
         </time>
-
         <div class="text">
           <?php the_content(); ?>
         <?php endwhile; ?>
