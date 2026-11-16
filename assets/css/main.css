@@ -454,6 +454,7 @@ single.php
   .date {
     text-align: right;
     margin-bottom: var(--space-xxs);
+    display: block;
   }
   & p {
     margin-bottom: var(--space-xxs);
