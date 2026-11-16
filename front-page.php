@@ -2,9 +2,9 @@
 defined('ABSPATH') || exit;
 ?>
 <?php get_header(); ?>
-<!-- main ------------------------->
+<!-- main -->
 <main class="front-page main">
-  <!-- mainvisual --------->
+  <!-- mainvisual -->
   <section class="mainvisual">
     <picture class="hero-image">
       <?php $theme_uri = esc_url(get_theme_file_uri()); ?>
@@ -29,7 +29,7 @@ defined('ABSPATH') || exit;
       </div>
     </div>
   </section>
-  <!-- news ------------->
+  <!-- news -->
   <section class="news wrapper">
     <h2 class="section-title">お知らせ</h2>
     <ul class="lists">
@@ -45,8 +45,9 @@ defined('ABSPATH') || exit;
         while ($recent_posts->have_posts()) : $recent_posts->the_post(); ?>
           <li class="item">
             <a href="<?php the_permalink(); ?>">
-              <time class="date"><?php echo get_the_date(); ?></time>
-
+              <time class="date" datetime="<?php echo esc_attr(get_the_date('Y-m-d')); ?>">
+                <?php echo esc_html(get_the_date()); ?>
+              </time>
               <h3 class="item-title"><?php the_title(); ?></h3>
               <p class="text">
                 <?php echo esc_html(wp_trim_words(get_the_content(), 40, '…')); ?>
@@ -62,7 +63,7 @@ defined('ABSPATH') || exit;
       <a href="<?php echo esc_url(get_permalink(get_option('page_for_posts'))); ?>">お知らせの一覧を見る</a>
     </div>
   </section>
-  <!-- dogs -------------->
+  <!-- dogs -->
   <section class="dogs bg">
     <h2 class="section-title">ワンちゃん紹介</h2>
     <ul class="lists grid">
@@ -111,7 +112,7 @@ defined('ABSPATH') || exit;
     </div>
   </section>
   <!-- story -->
-  <section class="story wrapper">
+  <div class="story wrapper">
     <p>
       やむを得ずペットを手放さなければならなくなった飼い主や<br />
       多頭飼育崩壊から救われた命を優しく包み込み<br />
@@ -122,7 +123,7 @@ defined('ABSPATH') || exit;
       私たちは一緒に歩み 心をこめて支えています。
     </p>
     <p>彼らと共に織りなす感動のストーリーに ご参加いただければ幸いです。</p>
-  </section>
+  </div>
   <!-- about -->
   <section class="about">
     <div class="inner">
