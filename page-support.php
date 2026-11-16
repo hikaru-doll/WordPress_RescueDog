@@ -67,5 +67,6 @@ defined('ABSPATH') || exit;
         </section>
       <?php endwhile; ?>
     <?php endif; ?>
+  </div>
 </main>
 <?php get_footer(); ?>
